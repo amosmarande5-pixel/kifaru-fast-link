@@ -1,0 +1,63 @@
+.premium-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+
+.hero { text-align: center; margin-bottom: 40px; }
+.hero h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--ember); margin-bottom: 10px; }
+.hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--ember), #ffd700);
+  color: var(--bg);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
+
+.pricing-card { background: var(--surface); border: 1px solid var(--border); padding: 30px; text-align: center; }
+.pricing-card.premium { border-color: var(--ember); position: relative; overflow: hidden; }
+.pricing-card.premium::before {
+  content: 'POPULAR';
+  position: absolute;
+  top: 12px;
+  right: -30px;
+  background: var(--ember);
+  color: var(--bg);
+  padding: 4px 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  transform: rotate(45deg);
+}
+
+.plan-name { font-family: 'Fraunces', serif; font-size: 1.5rem; margin-bottom: 10px; color: var(--text-main); }
+.plan-price { font-size: 2.5rem; font-weight: 700; color: var(--ember); margin-bottom: 20px; }
+.plan-price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+
+.plan-features { list-style: none; text-align: left; margin-bottom: 25px; padding: 0; }
+.plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-main); font-size: 0.9rem; }
+.plan-features li:last-child { border-bottom: none; }
+.plan-features .check { color: var(--signal); margin-right: 10px; font-weight: 700; }
+.plan-features .cross { color: var(--text-muted); margin-right: 10px; }
+
+.upgrade-btn { width: 100%; padding: 14px; font-size: 1rem; font-weight: 700; }
+.upgrade-btn.active-plan { background: var(--signal); color: var(--bg); }
+
+.features-section { margin-top: 50px; }
+.features-section h2 { font-family: 'Fraunces', serif; text-align: center; margin-bottom: 30px; color: var(--text-main); }
+
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.feature-item { background: var(--surface); border: 1px solid var(--border); padding: 20px; text-align: center; }
+.feature-icon { font-size: 2.5rem; margin-bottom: 15px; }
+.feature-item h3 { margin-bottom: 10px; color: var(--ember); font-family: 'Fraunces', serif; }
+.feature-item p { color: var(--text-muted); font-size: 0.9rem; }
+
+.back-link { text-align: center; margin-top: 40px; color: var(--text-muted); }
+.back-link a {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-color: var(--horn);
+  font-weight: 600;
+}

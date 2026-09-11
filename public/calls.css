@@ -1,0 +1,119 @@
+.calls-page {
+  padding: 0 0 76px;
+}
+
+.calls-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.calls-header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.clear-calls-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  clip-path: none !important;
+}
+.clear-calls-btn:hover { color: var(--danger); border-color: var(--danger); }
+
+.call-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+}
+.call-item:hover { background: var(--plate); }
+
+.call-avatar {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background: var(--plate);
+  border: 1px solid var(--border);
+  color: var(--horn);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.call-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.call-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+.call-name.missed { color: var(--danger); }
+
+.call-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.call-direction-icon {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.call-direction-icon.incoming { color: var(--signal); }
+.call-direction-icon.outgoing { color: var(--text-muted); }
+.call-direction-icon.missed { color: var(--danger); }
+
+.call-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.call-action-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--plate);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  clip-path: none !important;
+  padding: 0;
+}
+.call-action-btn:hover { color: var(--ember); border-color: var(--ember); }
+
+.empty-calls {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

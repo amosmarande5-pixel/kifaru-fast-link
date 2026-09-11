@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="bottom-nav.css">
+<link rel="stylesheet" href="call.css">
+</head>
+<body>
+
+<div id="chatListScreen" class="screen active">
+  <div class="chats-header">
+    <h1>Chats</h1>
+    <button id="statusBtn" class="icon-btn" title="Status">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    </button>
+  </div>
+  <div class="top-bar">
+    <div class="user-info">
+      <div class="avatar clip-br-sm" id="myAvatar">-</div>
+      <div class="user-text">
+        <span class="user-name" id="myName">-</span>
+        <span class="user-id" id="myId">-</span>
+      </div>
+    </div>
+    <button id="logoutBtn" class="icon-btn" title="Log out">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+    </button>
+  </div>
+
+  <div id="contactList" class="contact-list">
+    <p class="empty-state" id="emptyState">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v12H8l-4 4V4z"/></svg>
+      No contacts yet. Tap the + button and enter someone's Unique ID to start chatting.
+    </p>
+  </div>
+
+<button id="addContactBtn" class="fab clip-br-sm" title="Add contact">+</button>
+<button id="newGroupBtn" class="fab clip-br-sm fab-group" title="New group">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+</button>
+</div>
+
+<div id="groupInfoModal" class="modal">
+  <div class="modal-box clip-tl">
+    <h3 id="groupInfoName">Group</h3>
+    <button id="renameGroupBtn" class="secondary-btn width-100 margin-bottom-8">Rename group</button>
+    <div id="groupMembersInfo" class="group-members-list"></div>
+    <div id="addMemberSection" class="add-member-section hidden">
+      <input type="text" id="newMemberId" placeholder="Unique ID to add (e.g. KFL-A1B2C3D4)">
+      <button id="confirmAddMemberBtn" class="secondary-btn width-100 margin-bottom-8">Add member</button>
+    </div>
+    <p class="error-msg" id="groupInfoError"></p>
+    <button id="closeGroupInfo" class="secondary-btn width-100">Close</button>
+  </div>
+</div>
+
+<div id="chatThemeModal" class="modal">
+  <div class="modal-box clip-tl">
+    <h3>Chat theme</h3>
+    <div id="themeSwatches" class="chat-theme-swatches">
+      <button class="theme-swatch swatch-ember" data-color="#ff7a3d"></button>
+      <button class="theme-swatch swatch-green" data-color="#3ddc97"></button>
+      <button class="theme-swatch swatch-blue" data-color="#4a7dff"></button>
+      <button class="theme-swatch swatch-purple" data-color="#c94adf"></button>
+      <button class="theme-swatch swatch-red" data-color="#e83e3e"></button>
+      <button class="theme-swatch swatch-sand" data-color="#e8c48c"></button>
+    </div>
+    <label class="custom-color-label">Custom color</label>
+    <input type="color" id="customThemeColor" value="#ff7a3d" class="custom-color-input">
+    <div class="modal-actions">
+      <button id="resetChatTheme" class="secondary-btn">Reset to default</button>
+      <button id="closeChatTheme">Done</button>
+    </div>
+  </div>
+</div>
+
+<div id="messageActionSheet" class="modal">
+  <div class="modal-box clip-tl">
+    <button id="replyMessageBtn" class="secondary-btn width-100 margin-bottom-8">↩ Reply</button>
+    <button id="starMessageBtn" class="secondary-btn width-100 margin-bottom-8">☆ Star</button>
+    <button id="copyMessageBtn" class="secondary-btn width-100 margin-bottom-8">⧉ Copy text</button>
+    <button id="editMessageBtn" class="secondary-btn width-100 margin-bottom-8">✎ Edit</button>
+    <button id="deleteForMeBtn" class="secondary-btn width-100 margin-bottom-8 text-danger">Delete for me</button>
+    <button id="deleteForEveryoneBtn" class="secondary-btn width-100 margin-bottom-8 text-danger">Delete for everyone</button>
+    <button id="cancelMessageAction" class="secondary-btn width-100">Cancel</button>
+  </div>
+</div>
+
+<div id="newGroupModal" class="modal">
+  <div class="modal-box clip-tl">
+    <h3>New group</h3>
+    <input type="text" id="newGroupName" placeholder="Group name">
+    <div id="groupMemberList" class="new-group-list"></div>
+    <p class="error-msg" id="newGroupError"></p>
+    <div class="modal-actions">
+      <button id="cancelNewGroup" class="secondary-btn">Cancel</button>
+      <button id="confirmNewGroup">Create</button>
+    </div>
+  </div>
+</div>
+
+<div id="addContactModal" class="modal">
+  <div class="modal-box clip-tl">
+    <h3>Add contact</h3>
+    <input type="text" id="newContactId" placeholder="Their Unique ID (e.g. KFL-A1B2C3D4)">
+    <input type="text" id="newContactName" placeholder="Nickname (optional)">
+    <p class="error-msg" id="addContactError"></p>
+    <div class="modal-actions">
+      <button id="cancelAddContact" class="secondary-btn">Cancel</button>
+      <button id="confirmAddContact">Add</button>
+    </div>
+  </div>
+</div>
+
+<div id="chatScreen" class="screen">
+  <div class="chat-top-bar">
+    <button id="backToListBtn" class="icon-btn" title="Back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="avatar clip-br-sm" id="chatContactAvatar">-</div>
+    <div class="chat-contact-info">
+      <span class="chat-contact-name" id="chatContactName">-</span>
+      <span class="chat-contact-status" id="chatContactStatus"></span>
+    </div>
+    <button id="voiceCallBtn" class="icon-btn" title="Voice call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+    <button id="videoCallBtn" class="icon-btn" title="Video call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    </button>
+    <button id="searchToggleBtn" class="icon-btn" title="Search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button id="groupInfoBtn" class="icon-btn hidden" title="Group info">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    </button>
+    <button id="chatThemeBtn" class="icon-btn" title="Chat theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16c3.3 0 6-2.7 6-6 0-4.4-4-8-10-8z"/></svg>
+    </button>
+  </div>
+
+  <div id="searchBar" class="search-bar hidden">
+    <input type="text" id="searchInput" placeholder="Search in conversation...">
+    <span id="searchCount" class="search-count"></span>
+    <button id="searchPrevBtn" class="icon-btn" title="Previous">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <button id="searchNextBtn" class="icon-btn" title="Next">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <button id="searchCloseBtn" class="icon-btn" title="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="messages" id="messagesContainer"></div>
+
+  <div id="emojiPicker" class="emoji-picker hidden"></div>
+  <div id="replyPreviewBar" class="reply-preview-bar hidden">
+    <div class="reply-preview-content">
+      <div class="reply-preview-sender" id="replyPreviewSender"></div>
+      <div class="reply-preview-text" id="replyPreviewText"></div>
+    </div>
+    <button id="replyPreviewClose" class="icon-btn" title="Cancel reply">✕</button>
+  </div>
+
+  <form id="messageForm" class="message-input-bar">
+    <button type="button" id="attachBtn" class="icon-btn" title="Attach">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.5V7a5 5 0 0 0-10 0v9a3 3 0 0 0 6 0V9"/></svg>
+    </button>
+    <input type="file" id="imageInput" accept="image/*" class="hidden">
+    <input type="file" id="videoInput" accept="video/*" class="hidden">
+    <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+    <button type="button" id="emojiBtn" class="icon-btn" title="Emoji">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+    </button>
+    <button type="button" id="micBtn" class="icon-btn" title="Hold to record voice">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+    </button>
+    <button type="submit" class="clip-br-sm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </form>
+
+  <div id="recordingIndicator" class="recording-indicator hidden">
+    <span id="recordingText"></span>
+    <button type="button" id="flipCameraBtn" class="icon-btn hidden" title="Switch camera">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+    </button>
+  </div>
+
+  <div id="attachMenu" class="attach-menu hidden">
+    <button type="button" id="attachPhotoBtn" class="attach-option">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>Photo</span>
+    </button>
+    <button type="button" id="attachGalleryVideoBtn" class="attach-option">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      <span>Video</span>
+    </button>
+    <button type="button" id="attachRecordVideoBtn" class="attach-option">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+      <span>Record video</span>
+    </button>
+  </div>
+</div>
+
+<div id="callOverlay" class="call-overlay hidden">
+  <div class="call-timer hidden" id="callTimerEl">00:00</div>
+  <video id="remoteVideo" autoplay playsinline></video>
+  <div id="remoteVideoPlaceholder" class="call-placeholder">
+    <div class="call-placeholder-avatar" id="callRemoteAvatar">-</div>
+    <div class="call-placeholder-name" id="callRemoteName">-</div>
+    <div class="call-placeholder-status" id="callStatusText">Calling...</div>
+  </div>
+  <div class="call-local-video-wrap hidden" id="localVideoWrap">
+    <video id="localVideo" autoplay playsinline muted></video>
+  </div>
+  <div class="call-controls">
+    <button id="toggleMuteBtn" class="call-control-btn" title="Mute">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+    </button>
+    <button id="toggleCameraBtn" class="call-control-btn" title="Camera">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    </button>
+    <button id="endCallBtn" class="call-control-btn call-end-btn" title="End call">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+    </button>
+  </div>
+</div>
+
+<div id="incomingCallOverlay" class="call-overlay hidden">
+  <div class="incoming-call-card">
+    <div class="incoming-call-avatar" id="incomingAvatar">-</div>
+    <div class="incoming-call-name" id="incomingName">-</div>
+    <div class="incoming-call-type" id="incomingCallType">Incoming call</div>
+    <div class="incoming-call-actions">
+      <button id="rejectCallBtn" class="call-control-btn call-end-btn" title="Reject">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+      </button>
+      <button id="acceptCallBtn" class="call-control-btn call-accept-btn" title="Accept">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-item" data-page="dashboard.html">
+    <svg viewBox="0 0 24 24"><path d="M4 12l8-8 8 8M6 10v10h12V10"/></svg>
+    <span>Chats</span>
+  </button>
+  <button class="nav-item" data-page="status.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <span>Status</span>
+  </button>
+  <button class="nav-item" data-page="calls.html">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Calls</span>
+  </button>
+  <button class="nav-item" data-page="contacts.html">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M16 11c2.2 0 4 1.8 4 4"/></svg>
+    <span>Contacts</span>
+  </button>
+  <button class="nav-item" data-page="profile.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    <span>Profile</span>
+  </button>
+</nav>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="notify.js"></script>
+<script src="dashboard.js"></script>
+<script src="call.js"></script>
+<script src="bottom-nav.js"></script>
+
+</body>
+</html>

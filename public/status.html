@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status - Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="status.css">
+<link rel="stylesheet" href="bottom-nav.css">
+</head>
+<body>
+
+<main class="status-page has-bottom-nav">
+  <h1>Status</h1>
+
+  <div class="status-card" id="addTextStatusBtn">
+    <h3>📝 Add Text Status</h3>
+    <p>Post a text status that expires in 24 hours</p>
+  </div>
+
+  <div class="status-card" id="addPhotoStatusBtn">
+    <h3>📷 Add Photo Status</h3>
+    <p>Post a photo that expires in 24 hours</p>
+  </div>
+  <input type="file" id="statusInput" accept="image/*" class="hidden">
+
+  <section class="status-section hidden" id="myStatusSection">
+    <h2>My Status</h2>
+    <div id="myStatusCard"></div>
+  </section>
+
+  <section class="status-section">
+    <h2>Recent Updates</h2>
+    <div id="statusFeed"></div>
+  </section>
+</main>
+
+<div id="viewersModal" class="viewers-modal hidden">
+  <div class="viewers-box">
+    <h3>Viewed by</h3>
+    <div id="viewersList"></div>
+    <button id="closeViewersBtn" class="width-100 margin-top-14">Close</button>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-item" data-page="dashboard.html">
+    <svg viewBox="0 0 24 24"><path d="M4 12l8-8 8 8M6 10v10h12V10"/></svg>
+    <span>Chats</span>
+  </button>
+  <button class="nav-item active" data-page="status.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <span>Status</span>
+  </button>
+  <button class="nav-item" data-page="contacts.html">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M16 11c2.2 0 4 1.8 4 4"/></svg>
+    <span>Contacts</span>
+  </button>
+  <button class="nav-item" data-page="profile.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    <span>Profile</span>
+  </button>
+</nav>
+
+<script src="bottom-nav.js"></script>
+<script src="status.js"></script>
+</body>
+</html>

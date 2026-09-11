@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blocked Users - Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="edit-profile.css">
+<link rel="stylesheet" href="blocked-users.css">
+</head>
+<body>
+
+<header class="page-header">
+  <button id="backBtn" class="icon-btn" title="Back">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <h1>Blocked Users</h1>
+</header>
+
+<main>
+  <div class="block-input-row">
+    <input type="text" id="blockUserId" placeholder="Unique ID to block (e.g. KFL-A1B2C3D4)" class="text-field">
+    <button id="blockUserBtn" class="save-btn">Block</button>
+  </div>
+
+  <div id="blockedList"></div>
+</main>
+
+<script src="blocked-users.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  clip-path: none !important;
+}
+
+.edit-section {
+  padding: 20px;
+  border-bottom: 8px solid var(--bg);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.avatar-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background-color: var(--plate);
+  color: var(--text-main);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.color-swatches { display: flex; gap: 12px; }
+
+.swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.swatch.selected { border-color: var(--text-main); }
+
+/* Swatch colors (data-driven) */
+.swatch[data-color="#1e1e1e"] { background: #1e1e1e; }
+.swatch[data-color="#ff7a3d"] { background: var(--ember); }
+.swatch[data-color="#3ddc97"] { background: #3ddc97; }
+.swatch[data-color="#4a7dff"] { background: #4a7dff; }
+.swatch[data-color="#c94adf"] { background: #c94adf; }
+.swatch[data-color="#e8c48c"] { background: #e8c48c; }
+
+.text-field {
+  width: 100%;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.text-field::placeholder { color: var(--text-muted); }
+.text-field:focus { outline: none; border-color: var(--ember); }
+
+.save-btn {
+  width: 100%;
+  background-color: var(--ember);
+  color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  padding: 12px;
+  margin-top: 6px;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+}
+.save-btn:hover { background-color: var(--ember-soft); }
+
+.error-msg { color: var(--error); font-size: 13px; min-height: 16px; }
+.success-msg { color: var(--signal); font-size: 13px; min-height: 16px; }

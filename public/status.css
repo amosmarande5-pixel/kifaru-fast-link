@@ -1,0 +1,85 @@
+.status-page {
+  padding: 20px;
+}
+
+.status-page h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.status-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.status-card:hover { border-color: var(--ember); }
+.status-card h3 { font-family: 'Fraunces', serif; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+.status-card p { color: var(--text-muted); font-size: 0.85rem; }
+
+.status-section { margin-top: 24px; }
+.status-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.status-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.status-item strong { font-family: 'Fraunces', serif; color: var(--text-main); display: block; margin-bottom: 6px; }
+.status-item img { max-width: 100%; margin-top: 10px; border-radius: 8px; display: block; }
+.status-item p { color: var(--text-main); margin: 6px 0; }
+.status-item small { color: var(--text-muted); font-size: 0.75rem; display: block; margin-top: 6px; }
+.status-item .status-actions { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+.status-item .status-actions button { width: auto; padding: 8px 14px; font-size: 0.85rem; }
+
+.status-btn-plate { background: var(--plate) !important; color: var(--text-main) !important; border: 1px solid var(--border); }
+.status-btn-danger { background: var(--danger) !important; color: var(--bg) !important; }
+
+.status-empty { color: var(--text-muted); font-size: 0.9rem; }
+
+.viewers-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.viewers-modal.hidden { display: none; }
+.viewers-modal:not(.hidden) { display: flex; }
+
+.viewers-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  max-width: 320px;
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.viewers-box h3 { font-family: 'Fraunces', serif; margin-bottom: 12px; color: var(--text-main); }
+.viewer-row { padding: 6px 0; border-bottom: 1px solid var(--border); color: var(--text-main); font-size: 0.9rem; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-color: var(--horn);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

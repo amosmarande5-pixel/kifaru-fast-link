@@ -1,0 +1,59 @@
+.edit-section {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  margin-bottom: 8px;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 15px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+}
+
+.toggle-switch {
+  width: 40px;
+  height: 22px;
+  appearance: none;
+  background-color: var(--border);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.15s ease;
+}
+
+.toggle-switch::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--text-main);
+  transition: left 0.15s ease, background-color 0.15s ease;
+}
+
+.toggle-switch:checked { background-color: var(--ember); }
+.toggle-switch:checked::before {
+  left: 20px;
+  background-color: var(--bg);
+}
+
+.about-line {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-main);
+}
+
+.about-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}

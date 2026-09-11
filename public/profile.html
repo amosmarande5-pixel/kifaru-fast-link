@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="bottom-nav.css">
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Profile</h1>
+</header>
+
+<main class="has-bottom-nav">
+  <section class="profile-card">
+    <div class="avatar-upload-container">
+      <div class="avatar-large" id="profileAvatar">
+        <span id="avatarInitials">-</span>
+        <img id="avatarImage" src="" alt="Profile" class="hidden">
+      </div>
+      <label for="profilePicInput" class="avatar-upload-btn" title="Change profile picture">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.5V7a5 5 0 0 0-10 0v9a3 3 0 0 0 6 0V9"/>
+          <path d="M12 19v4"/>
+          <path d="M8 23h8"/>
+        </svg>
+      </label>
+      <input type="file" id="profilePicInput" accept="image/*" class="hidden">
+    </div>
+    <div class="upload-status" id="uploadStatus"></div>
+
+    <h2 class="profile-name" id="profileName">-</h2>
+    <div id="premiumBadge" class="premium-badge hidden">👑 Premium Member</div>
+    <p class="profile-id" id="profileId">-</p>
+  </section>
+
+  <section class="profile-actions">
+    <button class="action-row" id="copyIdBtn">
+      <span>Copy Unique ID</span>
+      <span class="chevron">›</span>
+    </button>
+    <button class="action-row" id="editProfileBtn">
+      <span>Edit Profile</span>
+      <span class="chevron">›</span>
+    </button>
+    <button class="action-row" id="blockedUsersBtn">
+      <span>Blocked Users</span>
+      <span class="chevron">›</span>
+    </button>
+    <button class="action-row" id="settingsBtn">
+      <span>Settings</span>
+      <span class="chevron">›</span>
+    </button>
+    <button class="action-row action-row-premium" id="premiumBtn">
+      <span class="premium-text">👑 Go Premium</span>
+      <span class="chevron">›</span>
+    </button>
+    <button class="action-row logout-row" id="logoutBtn">
+      <span>Log Out</span>
+      <span class="chevron">→</span>
+    </button>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <button class="nav-item" data-page="dashboard.html">
+    <svg viewBox="0 0 24 24"><path d="M4 12l8-8 8 8M6 10v10h12V10"/></svg>
+    <span>Chats</span>
+  </button>
+  <button class="nav-item" data-page="status.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <span>Status</span>
+  </button>
+  <button class="nav-item" data-page="calls.html">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Calls</span>
+  </button>
+  <button class="nav-item" data-page="contacts.html">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M16 11c2.2 0 4 1.8 4 4"/></svg>
+    <span>Contacts</span>
+  </button>
+  <button class="nav-item active" data-page="profile.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    <span>Profile</span>
+  </button>
+</nav>
+
+<script src="bottom-nav.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

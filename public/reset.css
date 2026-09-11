@@ -1,0 +1,62 @@
+.reset-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 32px 28px;
+}
+
+.reset-container h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.reset-intro {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.reset-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reset-container input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 13px 14px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+.reset-container input:focus { outline: none; border-color: var(--ember); }
+
+.reset-container button {
+  background: var(--ember);
+  color: var(--bg);
+  border: none;
+  padding: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+}
+.reset-container button:hover { background: var(--ember-soft); }
+
+.success-msg {
+  color: var(--signal);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.switch-link-spaced { margin-top: 20px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+.switch-link-spaced a {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-color: var(--horn);
+  font-weight: 600;
+}

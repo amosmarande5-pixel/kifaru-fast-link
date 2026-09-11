@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Secrets — DO NOT COMMIT
+.env
+.env.local
+.env.*.local
+
+# User uploads (media files)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.tar.gz
+backup_scripts/
+
+# Editor
+.vscode/
+.idea/

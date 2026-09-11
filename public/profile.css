@@ -1,0 +1,89 @@
+.page-header { padding: 20px; border-bottom: 1px solid var(--border); }
+.page-header h1 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--text-main); }
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 20px 28px;
+  border-bottom: 8px solid var(--bg);
+}
+
+/* ---- AVATAR WITH UPLOAD BUTTON ---- */
+.avatar-upload-container { position: relative; display: inline-block; margin-bottom: 16px; }
+
+.avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--plate);
+  border: 3px solid var(--border);
+  color: var(--horn);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.avatar-large img { width: 100%; height: 100%; object-fit: cover; }
+
+.avatar-upload-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ember);
+  border: 2px solid var(--bg);
+  color: var(--bg);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-status { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 8px; min-height: 20px; }
+.upload-status.success { color: var(--signal); }
+.upload-status.error { color: var(--error); }
+
+/* ---- PROFILE INFO ---- */
+.profile-name {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-main);
+}
+
+.profile-id { color: var(--signal); font-size: 14px; letter-spacing: 0.5px; }
+
+.premium-badge { color: var(--ember); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+
+/* ---- ACTIONS ---- */
+.profile-actions { padding: 8px 0; }
+
+.action-row {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-row-premium { border-left: 3px solid var(--ember); }
+.premium-text { color: var(--ember); font-weight: 700; }
+
+.chevron { color: var(--text-muted); font-size: 16px; }
+.logout-row { color: var(--ember); margin-top: 12px; }
+.logout-row .chevron { color: var(--ember); }

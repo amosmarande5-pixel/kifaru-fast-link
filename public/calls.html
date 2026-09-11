@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calls - Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="calls.css">
+<link rel="stylesheet" href="bottom-nav.css">
+</head>
+<body>
+
+<main class="calls-page has-bottom-nav">
+  <div class="calls-header">
+    <h1>Calls</h1>
+    <button id="clearCallsBtn" class="clear-calls-btn">Clear</button>
+  </div>
+  <div id="callList" class="call-list"></div>
+</main>
+
+<nav class="bottom-nav">
+  <button class="nav-item" data-page="dashboard.html">
+    <svg viewBox="0 0 24 24"><path d="M4 12l8-8 8 8M6 10v10h12V10"/></svg>
+    <span>Chats</span>
+  </button>
+  <button class="nav-item" data-page="status.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <span>Status</span>
+  </button>
+  <button class="nav-item active" data-page="calls.html">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Calls</span>
+  </button>
+  <button class="nav-item" data-page="contacts.html">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M16 11c2.2 0 4 1.8 4 4"/></svg>
+    <span>Contacts</span>
+  </button>
+  <button class="nav-item" data-page="profile.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    <span>Profile</span>
+  </button>
+</nav>
+
+<script src="bottom-nav.js"></script>
+<script src="calls.js"></script>
+</body>
+</html>

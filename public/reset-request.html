@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset Password - Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="reset.css">
+</head>
+<body class="centered-body">
+
+<div class="auth-container clip-tl">
+  <div class="reset-container">
+    <h2>Reset Password</h2>
+    <p class="reset-intro">Enter your account email and we'll send you reset instructions.</p>
+
+    <form id="resetRequestForm">
+      <input type="email" id="resetEmail" placeholder="Your account email" required>
+      <button type="submit">Send Reset Instructions</button>
+      <p class="error-msg" id="resetRequestError"></p>
+      <p class="success-msg" id="resetRequestSuccess"></p>
+    </form>
+
+    <p class="switch-link-spaced">
+      <a href="index.html">Back to Log In</a>
+    </p>
+  </div>
+</div>
+
+<script src="reset-request.js"></script>
+</body>
+</html>

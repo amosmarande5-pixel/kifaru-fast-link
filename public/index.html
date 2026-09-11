@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="centered-body">
+
+<div class="auth-container clip-tl">
+  <!-- LOGIN FORM -->
+  <form id="loginForm" class="auth-form active">
+    <h2>Log In</h2>
+    <input type="text" id="loginUniqueId" placeholder="Unique ID (e.g. KFL-A1B2C3D4)" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button type="submit">Log In</button>
+    <p class="switch-link">No account? <a href="#" data-target="registerForm">Register</a></p>
+    <p class="switch-link"><a href="reset-request.html">Forgot password?</a></p>
+    <p class="error-msg" id="loginError"></p>
+  </form>
+
+  <!-- REGISTER FORM -->
+  <form id="registerForm" class="auth-form">
+    <h2>Create Account</h2>
+    <input type="text" id="registerFullName" placeholder="Full Name" required>
+    <input type="email" id="registerEmail" placeholder="Email" required>
+    <input type="password" id="registerPassword" placeholder="Password" required>
+    <button type="submit">Register</button>
+    <p class="switch-link">Already have an account? <a href="#" data-target="loginForm">Log In</a></p>
+    <p class="error-msg" id="registerError"></p>
+  </form>
+
+  <!-- UNIQUE ID REVEAL (shown once after registration) -->
+  <div id="idReveal" class="id-reveal">
+    <h2>🎉 Account Created!</h2>
+    <p>This is your Unique ID. Save it now — it will <strong>never be shown again</strong>.</p>
+    <div class="id-box" id="generatedId">KFL-XXXXXXXX</div>
+    <button id="copyIdBtn">Copy ID</button>
+    <button id="continueToLoginBtn">Continue to Log In</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

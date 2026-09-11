@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 10 180 170" fill="none">
+  <defs>
+    <linearGradient id="rb" x1="60" y1="30" x2="230" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a8c2dd"/>
+      <stop offset="0.35" stop-color="#3f76b8"/>
+      <stop offset="0.7" stop-color="#1a3a6b"/>
+      <stop offset="1" stop-color="#0a1e3d"/>
+    </linearGradient>
+    <linearGradient id="rf" x1="140" y1="50" x2="210" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6eef7"/>
+      <stop offset="0.4" stop-color="#8ba6c8"/>
+      <stop offset="1" stop-color="#1c3a63"/>
+    </linearGradient>
+    <linearGradient id="hg" x1="155" y1="15" x2="195" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0f5fb"/>
+      <stop offset="0.5" stop-color="#9cb6d3"/>
+      <stop offset="1" stop-color="#3a5a86"/>
+    </linearGradient>
+    <linearGradient id="tg" x1="20" y1="90" x2="130" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a3a6b" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7d9cc4"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M25 78 L95 62 L82 74 L98 76 L78 88 L92 90 L20 100 Z" fill="url(#tg)"/>
+  <path d="M35 108 L88 100 L78 108 L95 110 L74 120 L86 122 L30 128 Z" fill="url(#tg)"/>
+  <path d="M45 138 L85 130 L76 138 L92 140 L72 150 L84 152 L40 156 Z" fill="url(#tg)"/>
+
+  <path d="M108 42
+           C120 32, 138 26, 150 34
+           L162 50 L172 20 L180 56 L198 90
+           L192 112 L172 138 L148 158 L112 168
+           C95 152, 78 122, 76 96
+           C74 68, 88 50, 108 42 Z"
+        fill="url(#rb)" stroke="#0a1e3d" stroke-width="2"/>
+
+  <path d="M148 60 L178 62 L188 92 L178 118 L152 138 L128 142 L118 120 L122 90 L140 70 Z"
+        fill="url(#rf)" opacity="0.85"/>
+
+  <path d="M148 58 L156 34 L166 60 Z" fill="url(#hg)" stroke="#0a1e3d" stroke-width="1.5"/>
+  <path d="M108 44 L118 20 L132 42 Z" fill="url(#rb)" stroke="#0a1e3d" stroke-width="1.5"/>
+  <path d="M156 84 L172 82 L170 92 L154 92 Z" fill="#0a1e3d"/>
+  <path d="M180 104 L192 104" stroke="#0a1e3d" stroke-width="2" stroke-linecap="round"/>
+
+  <circle cx="40" cy="106" r="3" fill="#5f89bd"/>
+  <circle cx="58" cy="118" r="2.5" fill="#5f89bd"/>
+  <circle cx="48" cy="88" r="2" fill="#5f89bd"/>
+</svg>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings - Kifaru Fast Link</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="edit-profile.css">
+<link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <button id="backBtn" class="icon-btn" title="Back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <h1>Settings</h1>
+  </header>
+
+  <main>
+    <section class="edit-section">
+      <div class="toggle-row">
+        <span>Message notifications</span>
+        <input type="checkbox" id="notifToggle" class="toggle-switch">
+      </div>
+      <div class="toggle-row">
+        <span>Sound on new message</span>
+        <input type="checkbox" id="soundToggle" class="toggle-switch">
+      </div>
+    </section>
+
+    <section class="edit-section">
+      <p class="about-line">Kifaru Fast Link</p>
+      <p class="about-sub">Version 1.0.0</p>
+    </section>
+
+    <section class="edit-section">
+      <button class="action-row" id="blockedUsersBtn">
+      <span>Blocked Users</span>
+      <span class="chevron">›</span>
+    </button>
+    <button class="action-row logout-row" id="logoutBtn">
+        <span>Log Out</span>
+        <span class="chevron">→</span>
+      </button>
+    </section>
+  </main>
+
+  <script src="settings.js"></script>
+</body>
+</html>

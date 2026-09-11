@@ -1,0 +1,25 @@
+/* ---- SEARCH UI ---- */
+.search-container { padding: 16px 18px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.search-input-wrapper { display: flex; gap: 10px; align-items: center; }
+.search-input-wrapper input { flex: 1; background: var(--bg); border: 1px solid var(--border); padding: 12px 14px; color: var(--text-main); font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+.search-input-wrapper input:focus { outline: none; border-color: var(--ember); }
+
+#searchResults { padding: 0 18px 18px; max-height: 300px; overflow-y: auto; }
+
+.search-result-card { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); padding: 14px 16px; margin-bottom: 10px; cursor: pointer; }
+.search-result-card:hover { border-color: var(--ember); }
+.search-result-info { flex: 1; }
+.search-result-name { font-weight: 600; font-size: 0.95rem; }
+.search-result-id { font-size: 0.75rem; color: var(--text-muted); }
+.search-result-status { font-size: 0.75rem; color: var(--signal); }
+
+.add-btn { background: var(--ember); color: var(--bg); border: none; padding: 8px 16px; font-weight: 600; font-size: 0.85rem; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%); }
+
+.search-message { color: var(--text-muted); text-align: center; padding: 20px; font-size: 0.9rem; }
+.search-message.error { color: var(--error); }
+
+/* ---- SWIPE-TO-DELETE ---- */
+.contact-wrapper { position: relative; overflow: hidden; }
+.delete-action { position: absolute; top: 0; right: 0; height: 100%; width: 80px; background-color: var(--danger-strong); color: var(--text-main); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.contact-wrapper .contact-card { position: relative; z-index: 1; transition: transform 0.2s ease; background: var(--surface); }
+.contact-wrapper .contact-card.swiping { transition: none; }
